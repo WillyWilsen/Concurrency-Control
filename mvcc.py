@@ -72,7 +72,6 @@ class MVCC:
             elif (self.queue[i][0][0] == "W"):
                 print(self.queue[i][0], "->     ", end="")
                 self.write(self.queue[i][0][3], int(self.queue[i][0][1]), self.queue[i][1])
-        print(self.eachTimestamp)
 
 # schedule = MVCC(["R1(A)", "R2(A)", "R3(B)", "R1(B)", "W3(C)", "W3(C)", "R1(C)", "C1", "R2(D)", "W3(B)", "C3", "W2(D)", "C2"])
 schedule = MVCC(["R5(X)", "R2(Y)", "R1(Y)", "W3(Y)", "W3(Z)", "R5(Z)", "R2(Z)", "R1(X)", "R4(W)", "W3(W)", "W5(Y)", "W5(Z)"])
