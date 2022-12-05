@@ -18,3 +18,10 @@ R1X,W2Y,C1,C2<br>
 - masukkan nama file yang telah dibuat
 
 ## Cara menjalankan algoritma MVCC
+- buat sebuah file .txt yang berisikan jadwal yang akan diolah oleh program dengan algoritma MVCC<br>
+contoh format isi file adalah:<br>
+R1X,W2Y,C1,C2<br>
+- masukkan file tersebut ke folder MVCC
+- buka folder MVCC dan jalankan pada cmd
+- masukkan perintah py MVCC.py ke CLI
+- masukkan nama file yang telah dibuat
