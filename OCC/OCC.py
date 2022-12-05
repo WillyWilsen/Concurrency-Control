@@ -48,8 +48,7 @@ class OCC:
         
         for i in (listOfThreads):
             self.transactions.append(Transaction(int(i),None,None,None))
-            print("input")
-            
+
             
     def validateTransaction(self, tx):
         '''
@@ -70,7 +69,7 @@ class OCC:
             
             if(i.getTS() == None):
                 continue
-
+            
             if(i.getEndTime() < tx.getStartTime()):
                 continue
             
@@ -83,9 +82,8 @@ class OCC:
                             borted = True
                         iter+=1
                     if(borted):
-                        for j in range(iter, len(tx.read)):
+                        for j in range(iter-1, len(tx.read)):
                             tx.addAborted(tx.read[j])
-                        print("Aborted variables: ", vari)
                         return False
                             
             else:
@@ -100,7 +98,6 @@ class OCC:
         for i in self.arr:
             if(i[0]=='R' or i[0]=='W'):
                 idThread= int(i[1])
-                print(self.transactions[idThread].getStartTime())
                 if(self.transactions[idThread].getStartTime() == None):
                     time.sleep(0.1)
                     a = time.time()
@@ -127,7 +124,10 @@ class OCC:
                 else:
                     print("Validation failed for thread ", i[1])
                     print("Aborted variables: ", self.transactions[int(i[1])].listAborted)
+            print()
+
     def printTransactions(self):
+        print("\n===Printing Status===")
         for i in self.transactions:
             print(i)
 
